@@ -20,8 +20,8 @@ import uploadAnalysisRouter from './src/routes/uploadAnalysis';
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 4000;
-const BASE_URL = process.env.BASE_URL || `http://localhost:${PORT}`;
+const PORT = Number(process.env.PORT) || 4000;
+const BASE_URL = process.env.BASE_URL || `https://${process.env.RAILWAY_STATIC_URL || 'localhost:4000'}`;
 
 app.use(cors());
 app.use(express.json());
@@ -64,6 +64,6 @@ app.get('/', (req, res) => {
 
 setupSwagger(app);
 
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`✅ Server running on ${BASE_URL}`);
 });
