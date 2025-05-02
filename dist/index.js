@@ -51,7 +51,7 @@ app.get('/', (req, res) => {
         <meta charset="UTF-8" />
         <meta property="og:title" content="AI 면접 분석 서비스" />
         <meta property="og:description" content="AI가 당신의 면접을 분석해드립니다." />
-        <meta property="og:image" content="${BASE_URL}/uploads/og-image.png" />
+        <meta property="og:image" content="${BASE_URL}/og-image.jpg" />
         <meta property="og:url" content="${BASE_URL}" />
         <title>AI 면접 백엔드 연결 성공</title>
       </head>
