@@ -70,7 +70,7 @@ model ResumeScript {
   updatedTime DateTime?
 
   user   User   @relation(fields: [userId], references: [id])
-  resume Resume @relation(fields: [resumeId], reSferences: [id], map: "ResumeScriptToResume")
+  resume Resume @relation(fields: [resumeId], references: [id], map: "ResumeScriptToResume")
 }
 
 model ResumeKeyword {
