@@ -23,8 +23,8 @@ const path_1 = __importDefault(require("path"));
 const uploadAnalysis_1 = __importDefault(require("./src/routes/uploadAnalysis"));
 dotenv_1.default.config();
 const app = (0, express_1.default)();
-const PORT = process.env.PORT || 4000;
-const BASE_URL = process.env.BASE_URL || `http://localhost:${PORT}`;
+const PORT = Number(process.env.PORT) || 4000;
+const BASE_URL = process.env.BASE_URL || `https://${process.env.RAILWAY_STATIC_URL || 'localhost:4000'}`;
 app.use((0, cors_1.default)());
 app.use(express_1.default.json());
 app.use('/auth', auth_1.default);
@@ -40,6 +40,7 @@ app.use('/resume-keywords', resumeKeyword_1.default);
 app.use('/analyses', analysis_1.default);
 app.use('/upload', upload_1.default);
 app.use('/uploads', express_1.default.static(path_1.default.join(__dirname, 'uploads')));
+app.use('/public', express_1.default.static(path_1.default.join(__dirname, 'public')));
 app.use('/upload-analysis', uploadAnalysis_1.default);
 app.get('/', (req, res) => {
     console.log('✅ 루트 경로 요청 들어옴');
@@ -62,6 +63,6 @@ app.get('/', (req, res) => {
   `);
 });
 (0, swagger_1.setupSwagger)(app);
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
     console.log(`✅ Server running on ${BASE_URL}`);
 });
