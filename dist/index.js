@@ -57,7 +57,7 @@ app.get('/', (req, res) => {
       </head>
       <body>
         <h1>✅ 백엔드 서버 연결 성공!</h1>
-        <img src="/uploads/og-image.png" width="300" />
+        <img src="/public/og-image.jpg" width="300" />
       </body>
     </html>
   `);
