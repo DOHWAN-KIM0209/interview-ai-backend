@@ -22,7 +22,7 @@ https://interview-ai-backend.up.railway.app
 | 면접 질문 불러오기 | GET | `/questions` |
 | 스크립트 제출 | POST | `/scripts` |
 | 분석 요청 업로드 | POST | `/upload-analysis` |
-| 정적 이미지 접근 (OG 이미지 등) | GET | `/uploads/og-image.png` |
+| 정적 이미지 접근 (OG 이미지 등) | GET | `/public/og-image.jpg` |
 
 ---
 
