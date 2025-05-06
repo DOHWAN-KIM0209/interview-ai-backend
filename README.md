@@ -63,5 +63,5 @@ https://interview-ai-backend.up.railway.app/api-docs
 ## ✅ 기타 참고사항
 
 - 모든 요청은 CORS 허용되어 있음
-- 이미지 등 정적 리소스는 `/uploads` 경로에서 접근 가능
+- 이미지 등 정적 리소스는 `/public` 경로에서 접근 가능
 - 백엔드가 Express 기반이며, Railway에서 자동 배포됨
